@@ -1,7 +1,5 @@
 export default function Home() {
   return (
-    <div className="bg-amber-950 text-white flex min-h-screen items-center justify-center">
-      Hi there! Welcome to the Next.js app.
-    </div>
+    <h1 className="text-2xl">Welcome to Typescript, React & Nextjs App</h1>
   );
 }

@@ -1,14 +1,15 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
-  { name: 'Product', href: '#' },
-  { name: 'Features', href: '#' },
-  { name: 'Marketplace', href: '#' },
-  { name: 'Company', href: '#' },
+  { name: 'Example#1', href: '/e1' },
+  { name: 'Example#2', href: '/e2' },
+  { name: 'Example#3', href: '/e3' },
+  { name: 'Example#4', href: '/e4' },
 ]
 
 export default function Example() {
@@ -17,7 +18,7 @@ export default function Example() {
   return (
     <header className="bg-amber-400">
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
-        <a href="#" className="-m-1.5 p-1.5">
+        <Link href="/" className="-m-1.5 p-1.5">
           <span className="sr-only">Test</span>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -25,7 +26,7 @@ export default function Example() {
             src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
             className="h-8 w-auto"
           />
-        </a>
+        </Link>
         <div className="flex lg:hidden">
           <button
             type="button"
@@ -38,9 +39,9 @@ export default function Example() {
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
           {navigation.map((item) => (
-            <a key={item.name} href={item.href} className="text-sm/6 font-semibold text-gray-900">
+            <Link key={item.name} href={item.href} className="text-sm/6 font-semibold text-gray-900">
               {item.name}
-            </a>
+            </Link>
           ))}
         </div>
       </nav>
@@ -70,13 +71,13 @@ export default function Example() {
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 {navigation.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
                     href={item.href}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
