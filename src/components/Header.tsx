@@ -10,6 +10,7 @@ const navigation = [
   { name: 'Example#2', href: '/e2' },
   { name: 'Example#3', href: '/e3' },
   { name: 'Example#4', href: '/e4' },
+  { name: 'Products', href: '/products' },
 ]
 
 export default function Example() {
