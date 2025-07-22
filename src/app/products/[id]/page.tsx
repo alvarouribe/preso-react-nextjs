@@ -15,7 +15,8 @@ type ProductPageProps = {
 }
 
 export default async function ProductPage({ params }: ProductPageProps) {
-  const product = await getProduct(params.id);
+    const { id } = await params;
+  const product = await getProduct(id);
 
   if (!product) {
     // If product is not found based on the ID, trigger the 404 page
