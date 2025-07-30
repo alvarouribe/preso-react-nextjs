@@ -1,5 +1,5 @@
-export default function Ecample1() {
+export default function Example2() {
     return (
-        <div>E2</div>
+        <h1>Conditional rendering</h1>
     )
 }
