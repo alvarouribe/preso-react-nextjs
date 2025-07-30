@@ -10,10 +10,11 @@ export default function Example3() {
     });
         
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const { value } = event.target;
+        const { name, value } = event.target;
+        console.log(`Updating ${name} to:`, value);
         setForm((prevForm) => ({
             ...prevForm,
-            firstName: value // how to update via name?
+            [name]: value // how to update via name?
         }));
     };
     return (
