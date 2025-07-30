@@ -4,8 +4,9 @@ import { useState } from "react";
 
 export default function Example1() {
     const [count, setCount] = useState(0);
-
+    
     const increaseByOne = () => {
+        console.log('Lets increase by 1!');
         setCount(count + 1);
         
         // or setCount((prevCount) => prevCount + 1);
@@ -19,13 +20,17 @@ export default function Example1() {
         setCount(count + 1);
     };
     return (
-        <>
-            <h1 className='text-2xl mb-4'>Types of setters</h1>
+        <main>
+            <section className="flex flex-col">
+                <h1>Example 1 - Types of setters</h1>
 
-            <main className="flex flex-col">
                 <div className="mt-4 text-lg border p-2 rounded text-white size-30">
                     Count {count}
                 </div>
+
+                {/* <div className="mt-4 text-lg border p-2 rounded text-white size-30">
+                    doubleCount {doubleCount}
+                </div> */}
 
                 <div className="flex gap-4 mt-12">
                     <button 
@@ -38,7 +43,7 @@ export default function Example1() {
                         Increase +3
                     </button>
                 </div>
-            </main>
-        </>
+            </section>
+        </main>
     )
 }
