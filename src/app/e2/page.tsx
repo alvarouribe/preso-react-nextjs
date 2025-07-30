@@ -14,9 +14,9 @@ export default function Example2() {
     };
     return (
         <main>
-            <h1>Example 2 - Objects updates</h1>
            
             <section>
+            <h1>Example 2 - Objects updates</h1>
                 <form>
                     <input 
                         type="text" 
