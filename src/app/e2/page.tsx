@@ -8,9 +8,28 @@ export default function Example2() {
         age: 0,
         email: ''
     });
-    const updateName = (event) => {
+    const updateName = (event: React.ChangeEvent<HTMLInputElement>) => {
         const newName = event.target.value;
         console.log('Updating name to:', newName);
+        
+        // setUserData((prevData) => ({
+        //     ...prevData,
+        //     name: newName
+        // }));
+        // or alternatively
+        // setUserData(() => {
+        //     return {
+        //         ...userData,
+        //         name: newName
+        //     };
+        // });
+        // or alternatively
+        setUserData(() => ({
+            ...userData,
+            name: newName
+        }));
+        // or alternatively
+        // setUserData({ ...userData, name: newName });
     };
     return (
         <main>
