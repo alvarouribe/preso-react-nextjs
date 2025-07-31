@@ -23,14 +23,11 @@ export default function Example1() {
         <main>
             <section className="flex flex-col">
                 <h1>Example 1 - Types of setters</h1>
-
+                <p>+1 sets the state of count to <code>count</code> + 1. So it will increase count +1</p>
+                <p>+3 calls the same setter but 3 times, <strong>what do you think will happen?</strong></p>
                 <div className="mt-4 text-lg border p-2 rounded text-white size-30">
                     Count {count}
                 </div>
-
-                {/* <div className="mt-4 text-lg border p-2 rounded text-white size-30">
-                    doubleCount {doubleCount}
-                </div> */}
 
                 <div className="flex gap-4 mt-12">
                     <button 
