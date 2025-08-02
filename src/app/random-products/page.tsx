@@ -1,16 +1,5 @@
 import ProductLink from '@/components/ProductLink';
-
-async function getProducts() {
-  const response = await fetch(
-    `https://fakerapi.it/api/v1/products?_quantity=2`
-  );
-  console.log('response', response);
-
-  if (!response.ok) {
-    return null; // Product not found
-  }
-  return response.json();
-}
+import { getRandomProducts } from '@/lib/api';
 
 type Product = {
   id: number;
@@ -25,8 +14,10 @@ type Product = {
   tags: string[];
 };
 
+export const revalidate = 3600; // seconds (1 hour) — page is static & revalidated
+
 export default async function Products() {
-  const products = await getProducts();
+  const products = await getRandomProducts(5);
   console.log('Products:', products); // Log the products for debugging
   return (
     <>
