@@ -4,7 +4,15 @@ import { useEffect, useState } from 'react';
 
 export default function Example5() {
   console.log('Example 5 page mounted');
-  const [data, setData] = useState(null);
+
+  type Post = {
+    userId: number;
+    id: number;
+    title: string;
+    body: string;
+  };
+
+  const [data, setData] = useState<Post | null>(null);
 
   useEffect(() => {
     console.log('UseEffect Example 5 page mounted');
@@ -23,11 +31,15 @@ export default function Example5() {
     };
   }, []);
 
+  if (!data) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <main>
       <section>
         <h1>Example 5 - useEffect conditional rendering</h1>
-        {data.title}
+        {data?.title}
       </section>
     </main>
   );

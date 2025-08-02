@@ -10,14 +10,14 @@ export default function Example2() {
     email: '',
   });
 
-  const updateName = event => {
-    const newName = event.target.value;
-    console.log('Updating name to:', newName);
-    // setUserData({
-    //     name: newName
-    // });
-    // console.log('userData:', userData);
-  };
+  // const updateName = (event:) => {
+  //   const newName = event.target.value;
+  //   console.log('Updating name to:', newName);
+  //   // setUserData({
+  //   //     name: newName
+  //   // });
+  //   // console.log('userData:', userData);
+  // };
 
   return (
     <main>
@@ -37,7 +37,7 @@ export default function Example2() {
             name="name"
             id="name"
             placeholder="Insert your name"
-            onChange={updateName}
+            // onChange={updateName}
             value={userData.name}
           />
         </form>
