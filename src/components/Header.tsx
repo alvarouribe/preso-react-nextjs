@@ -12,6 +12,7 @@ const navigation = [
   { name: 'Example#4', href: '/e4' },
   { name: 'Example#5', href: '/e5' },
   { name: 'Products', href: '/products' },
+  { name: 'Random Products', href: '/random-products' },
 ];
 
 export default function Example() {
