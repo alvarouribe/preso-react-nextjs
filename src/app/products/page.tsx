@@ -23,7 +23,6 @@ type Product = {
 
 export default async function Products() {
   const products = await getProducts();
-  console.log('Products:', products); // Log the products for debugging
   return (
     <>
       <h2 className="text-xl font-semibold mb-2">Products</h2>

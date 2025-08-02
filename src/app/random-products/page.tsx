@@ -14,11 +14,10 @@ type Product = {
   tags: string[];
 };
 
-export const revalidate = 3600; // seconds (1 hour) — page is static & revalidated
+export const revalidate = 15; // seconds
 
 export default async function Products() {
   const products = await getRandomProducts(5);
-  console.log('Products:', products); // Log the products for debugging
   return (
     <>
       <h2 className="text-xl font-semibold mb-2">Random Products</h2>
