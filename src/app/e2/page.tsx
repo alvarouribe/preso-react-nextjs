@@ -3,6 +3,7 @@
 import { useState } from 'react';
 
 export default function Example2() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [userData, setUserData] = useState({
     name: 'Alvaro',
     age: 21,
