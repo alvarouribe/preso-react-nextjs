@@ -12,10 +12,10 @@ type ProductPageProps = {
   params: {
     id: string;
   };
-}
+};
 
 export default async function ProductPage({ params }: ProductPageProps) {
-    const { id } = await params;
+  const { id } = await params;
   const product = await getProduct(id);
 
   if (!product) {
@@ -25,7 +25,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
   return (
     <div>
-      <h1 className='text-2xl'>{product.title}</h1>
+      <h1 className="text-2xl">{product.title}</h1>
       <h2>$ {product.price}</h2>
       <p>{product.description}</p>
     </div>

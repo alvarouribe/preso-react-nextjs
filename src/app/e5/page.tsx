@@ -1,34 +1,34 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 export default function Example5() {
-    console.log('Example 5 page mounted');
-    const [data, setData] = useState(null);
+  console.log('Example 5 page mounted');
+  const [data, setData] = useState(null);
 
-    useEffect(() => {
-        console.log('UseEffect Example 5 page mounted');
-        fetch('https://jsonplaceholder.typicode.com/posts/1')
-            .then(response => response.json())
-            .then(data => {
-                console.log('Fetched data:', data);
-                setData(data);
-            })
-            .catch(error => {
-                console.error('Error fetching data:', error);
-            });
+  useEffect(() => {
+    console.log('UseEffect Example 5 page mounted');
+    fetch('https://jsonplaceholder.typicode.com/posts/1')
+      .then(response => response.json())
+      .then(data => {
+        console.log('Fetched data:', data);
+        setData(data);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
 
-        return () => {
-            console.log('UseEffect Example 5 page unmounted');
-        };
-    }, []);
+    return () => {
+      console.log('UseEffect Example 5 page unmounted');
+    };
+  }, []);
 
-    return (
-        <main>
-            <section>
-                <h1>Example 5 - useEffect conditional rendering</h1>
-                {data.title}
-            </section>
-        </main>
-    );
+  return (
+    <main>
+      <section>
+        <h1>Example 5 - useEffect conditional rendering</h1>
+        {data.title}
+      </section>
+    </main>
+  );
 }
