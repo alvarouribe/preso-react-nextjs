@@ -2,8 +2,11 @@
 
 import { useState } from 'react';
 
+let outsideCount = 0;
+
 export default function Example1() {
   const [count, setCount] = useState(0);
+  console.log('I am a component that has rendered!');
 
   const increaseByOne = () => {
     console.log('Lets increase by 1!');
@@ -19,6 +22,16 @@ export default function Example1() {
     setCount(count + 1);
     setCount(count + 1);
   };
+
+  const resetToZero = () => {
+    setCount(0);
+  };
+
+  // This wont re-render the component but it will change the value of outsideCount
+  // next time we change a state inside the component
+  // it will use the new value of outsideCount
+  const increaseOutsideCount = () => (outsideCount += 1);
+
   return (
     <main>
       <section className="flex flex-col">
@@ -32,13 +45,16 @@ export default function Example1() {
           <strong>what do you think will happen?</strong>
         </p>
         <div className="mt-4 text-lg border p-2 rounded text-white size-30">
-          Count {count}
+          Count {count} <br />
+          oc: {outsideCount}
         </div>
 
         <div className="flex gap-4 mt-12">
           <button onClick={increaseByOne}>Increase +1</button>
 
           <button onClick={increaseByThree}>Increase +3</button>
+          <button onClick={resetToZero}>Reset to 0</button>
+          <button onClick={increaseOutsideCount}>Increase outside count</button>
         </div>
       </section>
     </main>
